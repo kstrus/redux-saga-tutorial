@@ -6,9 +6,9 @@ import * as api from '../api/users';
 function* getUsers() {
     try {
         const response = yield call(api.getUsers);
-        yield put(actions.getUsersSuccess(response.data.data));
+        yield put(actions.getUsersSuccess(response.data));
     } catch (e) {
-
+        yield put(actions.usersError('An error occurred while getting the users list'));
     }
 }
 
@@ -26,7 +26,7 @@ function* createUser(action) {
         });
         yield put(actions.createUserSuccess(response.data));
     } catch (e) {
-
+        yield put(actions.usersError('An error occurred while creating a user'));
     }
 }
 
@@ -41,7 +41,7 @@ function* deleteUser(id) {
         yield call(api.deleteUser, id);
         yield put(actions.deleteUserSuccess(id));
     } catch (e) {
-
+        yield put(actions.usersError('An error occurred while deleting a user'));
     }
 }
 

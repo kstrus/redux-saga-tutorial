@@ -4,7 +4,8 @@ export const Types = {
     CREATE_USER_REQUEST: 'CREATE_USER_REQUEST',
     CREATE_USER_SUCCESS: 'CREATE_USER_SUCCESS',
     DELETE_USER_REQUEST: 'DELETE_USER_REQUEST',
-    DELETE_USER_SUCCESS: 'DELETE_USER_SUCCESS'
+    DELETE_USER_SUCCESS: 'DELETE_USER_SUCCESS',
+    USERS_ERROR: 'USERS_ERROR'
 };
 
 export const getUsersRequest = () => {
@@ -13,11 +14,11 @@ export const getUsersRequest = () => {
     };
 };
 
-export const getUsersSuccess = users => {
+export const getUsersSuccess = usersList => {
     return {
         type: Types.GET_USERS_SUCCESS,
         payload: {
-            users: users
+            usersList: usersList
         }
     };
 };
@@ -55,6 +56,15 @@ export const deleteUserSuccess = id => {
         type: Types.DELETE_USER_SUCCESS,
         payload: {
             id: id
+        }
+    };
+};
+
+export const usersError = error => {
+    return {
+        type: Types.USERS_ERROR,
+        payload: {
+            error: error
         }
     };
 };

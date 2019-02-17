@@ -6,16 +6,6 @@
       "id": 1
     },
     {
-      "firstName": "Kate",
-      "lastName": "Bush",
-      "id": 2
-    },
-    {
-      "firstName": "Adam",
-      "lastName": "Lambert",
-      "id": 4
-    },
-    {
       "firstName": "Mona",
       "lastName": "Liza",
       "id": 5
@@ -24,6 +14,21 @@
       "firstName": "Katy",
       "lastName": "Perry",
       "id": 6
+    },
+    {
+      "firstName": "Jay",
+      "lastName": "Z",
+      "id": 7
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Lambert",
+      "id": 8
+    },
+    {
+      "firstName": "Adam",
+      "lastName": "Adam",
+      "id": 9
     }
   ]
 }

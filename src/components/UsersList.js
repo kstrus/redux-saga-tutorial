@@ -36,11 +36,17 @@ class UsersList extends React.Component {
     }
 
     render() {
-        const { users } = this.props;
+        const { usersList } = this.props;
+
+        if (!usersList) {
+            return (
+                <div>No users</div>
+            )
+        }
 
         return (
             <ListGroup>
-                {users.sort((a, b) => {
+                {usersList.sort((a, b) => {
                     if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) {
                         return 1;
                     }
@@ -63,12 +69,12 @@ class UsersList extends React.Component {
 UsersList.propTypes = {
     getUsersRequest: PropTypes.func,
     deleteUserRequest: PropTypes.func,
-    users: PropTypes.array
+    usersList: PropTypes.array
 };
 
 const mapStateToProps = state => {
     return {
-        users: state.users
+        usersList: state.users.usersList
     };
 };
 
