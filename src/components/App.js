@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import UsersList from './UsersList';
+import CreateUserForm from './CreateUserForm';
 
 class App extends Component {
     render() {
         return (
-            <div>App</div>
+            <div style={{ margin: '20px auto', maxWidth: '600px' }}>
+                <CreateUserForm />
+                <UsersList />
+            </div>
         );
     }
 }
